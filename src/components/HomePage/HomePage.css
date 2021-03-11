@@ -1,0 +1,33 @@
+.header{
+    background-image: url(../../image/banner.jpg);
+    background-size: cover;
+    height:250px;
+    opacity:0.8;
+}
+.leagueDiv{
+    display:grid;
+    grid-template-columns: repeat(3,1fr);
+}
+@media only screen and (max-width:576px){
+    .leagueDiv {
+        margin-left: 5px;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+@media only screen and (min-width:577px) and (max-width:999px){
+    .leagueDiv {
+        margin-left: auto;
+        margin-right: auto;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px 10px;
+    }
+}
+@media only screen and (min-width:400px) and (max-width:575px) {
+    .leagueDiv {
+        margin-left: 50px !important;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
