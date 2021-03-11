@@ -8,6 +8,10 @@
     align-items: center;
     padding-top: 15px;
 }
+.img{
+     height: 150px;
+     width: 320px;
+}
 .all-items{
     display: flex;
 }
@@ -21,6 +25,19 @@
     .all-items {
         display: flex;
         flex-direction: column;
+    }
+    .cardDiv{
+        height:360px;
+    }
+    .img-container{
+        margin-top:5px;
+    }
+    
+    
+}
+@media only screen and(max-width:350px) and (min-width:280px){
+    .img {
+        width: 280px !important;
     }
 }
 @media only screen and (max-width:1199px) and (min-width:577px){

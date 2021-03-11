@@ -1,11 +1,14 @@
 import React from "react";
 import { useEffect } from "react";
 import { useState } from "react";
-import { Container, Row, Card } from "react-bootstrap";
-import { useParams } from "react-router-dom";
+import { Container, Row, Card, Button } from "react-bootstrap";
+import { Link, useParams } from "react-router-dom";
 import { BiMap, BiAperture } from "react-icons/bi";
 import { BsFlag } from "react-icons/bs";
+import { BsArrowLeft } from "react-icons/bs";
 import { AiFillFacebook } from "react-icons/ai";
+import { AiOutlineTwitter } from "react-icons/ai";
+import { AiFillYoutube } from "react-icons/ai";
 import { CgGenderMale } from "react-icons/cg";
 import male from "../../image/male.png";
 import female from "../../image/female.png";
@@ -36,7 +39,7 @@ const LeagueDetails = () => {
         <Container>
           <Row>
             <Card
-              className="text-white p-3 my-3"
+              className="text-white cardDiv p-3 my-3"
               style={{ backgroundColor: "#3A42FF", width: "100%" }}
             >
               {loading ? (
@@ -44,7 +47,7 @@ const LeagueDetails = () => {
               ) : (
                 <div className="all-items">
                   <div className="details-container">
-                    <h4>{details.strLeagueAlternate}</h4>
+                    <h4>{details.strLeague}</h4>
                     <h6>
                       <BiMap />
                       First Event: {details.dateFirstEvent}
@@ -62,7 +65,7 @@ const LeagueDetails = () => {
                   </div>
                   <div className="img-container">
                     <img
-                      style={{ height: "150px", width: "320px" }}
+                      className="img"
                       src={details.strGender === "Male" ? male : female}
                       alt="img"
                     />
@@ -71,13 +74,28 @@ const LeagueDetails = () => {
               )}
             </Card>
           </Row>
-          <p className="text-justify text-white py-3 mb-3">
+          <p className="text-justify description text-white py-3 mb-3">
             {details.strDescriptionEN}
           </p>
           <div>
-            <Row>
-              <SocialIcon icon={AiFillFacebook} />
+            <Row className="d-flex justify-content-center py-3">
+              <a href="https://facebook.com" target="_blank">
+                <SocialIcon icon={AiFillFacebook} />
+              </a>
+              <a href="https://www.twitter.com/" target="_blank">
+                <SocialIcon icon={AiOutlineTwitter} />
+              </a>
+              <a href="https://www.youtube.com/" target="_blank">
+                <SocialIcon icon={AiFillYoutube} />
+              </a>
             </Row>
+            <Link to="/home">
+              <Button className="d-flex justify-content-center">
+                <BsArrowLeft style={{ marginTop: "5px", marginRight: "5px" }} />{" "}
+                Back to Home
+              </Button>
+            </Link>
+            <br />
           </div>
         </Container>
       </div>

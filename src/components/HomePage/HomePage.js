@@ -5,6 +5,7 @@ import "./HomePage.css";
 
 const HomePage = () => {
   const [leagues, setLeagues] = useState([]);
+  const [loading, setLoading] = useState(true);
   useEffect(() => {
     const api = "https://www.thesportsdb.com/api/v1/json/1/all_leagues.php";
     fetch(api)
@@ -13,6 +14,7 @@ const HomePage = () => {
         const mainData = data.leagues;
         const leagueData = mainData.slice(0, 12);
         setLeagues(leagueData);
+        setLoading(false);
       });
   }, []);
   return (
@@ -22,11 +24,15 @@ const HomePage = () => {
       </div>
       <div style={{ backgroundColor: "#0E0A2A" }}>
         <Container>
-          <div className="leagueDiv">
-            {leagues.map((league) => (
-              <League key={league.idLeague} league={league} />
-            ))}
-          </div>
+          {loading ? (
+            <h1 className="text-center text-white">Loading...</h1>
+          ) : (
+            <div className="leagueDiv">
+              {leagues.map((league) => (
+                <League key={league.idLeague} league={league} />
+              ))}
+            </div>
+          )}
         </Container>
       </div>
     </div>
