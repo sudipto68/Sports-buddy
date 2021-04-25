@@ -1,4 +1,8 @@
-[Sports Buddy](https://kind-torvalds-c6b82c.netlify.app/)
+Live Link: [Sports Buddy](https://kind-torvalds-c6b82c.netlify.app/)
 
-You can find football league details here. You can find league banner, logo and all others details here.
-This Website is created using React Js, React Bootstrap, React Router.
+#### Sports Buddy--> Sports details finder website. Created using sportsDB api.
+
+Used Technology:
+1. React Hooks
+2. React Router
+3. React Icons
